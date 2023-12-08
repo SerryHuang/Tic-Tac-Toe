@@ -1,0 +1,7 @@
+﻿  main.c
+C:\Users\Susan\Desktop\Tic-Tac-Toe\Project\tic-tac-toe\main.c(12,16): warning C4101: 'COMINPUT': 未參考的區域變數
+  originalboard.c
+  printfboard.c
+C:\Users\Susan\Desktop\Tic-Tac-Toe\Project\tic-tac-toe\printfboard.c(10,5): warning C4013: 'printf' 未定義; 假設 extern 傳回整數
+  正在產生程式碼...
+  tic-tac-toe.vcxproj -> C:\Users\Susan\Desktop\Tic-Tac-Toe\Project\x64\Debug\tic-tac-toe.exe
