@@ -1,2 +1,2 @@
 # Tic-Tac-Toe
-棋盤為5x5棋盤，X玩家輸入棋盤對應數字1-25來選擇擺放位置，接著電腦O下棋，五子一線即為獲勝。
+The chessboard is a 5x5 grid. The X player inputs numbers 1-25 to choose the placement position on the board. Subsequently, the computer (O) makes its move. The goal is to achieve a line of five pieces in a row for victory.
