@@ -1,16 +1,16 @@
 # Tic-Tac-Toe
 
-## Game Introduction
+## 遊戲介紹
 
-### 1. **Game Objective:**
-   - Two players take turns playing, with the X player starting first.
-   - The goal is to form a line of five symbols in a row on the 5x5 game board, either horizontally, vertically, or diagonally.
+### 1. **遊戲目標:**
+   - 兩位玩家輪流進行遊戲，X玩家先手。
+   - 目標是在5x5的遊戲棋盤上形成一條包含五個相同符號的線，可以是橫向、縱向或對角線。
 
-### 2. **Gameplay Steps:**
-   - The X player chooses a position on the board to place their symbol (a number from 1 to 25).
-   - Subsequently, the computer O makes its move by selecting an available position, also choosing from the numbers 1 to 25.
-   - Players and the computer take turns until one player achieves a line of five symbols in a row or until all grid spaces are occupied.
+### 2. **遊戲步驟:**
+   - X玩家選擇在棋盤上放置他們符號的位置（從1到25的數字）。
+   - 隨後，電腦O通過選擇一個可用的位置（同樣從1到25的數字中選擇）進行移動。
+   - 玩家和電腦輪流進行，直到有一名玩家在橫向、縱向或對角線上形成了五個符號的線，或者直到所有的格子都被佔據。
 
-### 3. **Victory Conditions:**
-   - A player wins when they have five consecutive identical symbols in a horizontal, vertical, or diagonal direction.
-   - If all grid spaces are occupied, and no player achieves a line, the game is declared a draw.
+### 3. **勝利條件:**
+   - 玩家在橫向、縱向或對角線上擁有五個連續的相同符號即為勝利。
+   - 如果所有格子都被佔據，且沒有玩家實現了線，遊戲將宣告為平局。
