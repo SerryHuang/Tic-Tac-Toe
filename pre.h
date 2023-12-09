@@ -5,5 +5,5 @@
 void originalboard();
 void printfboard();
 void computerenter();
-void playerenter();
+int playerenter();
 void correct();
