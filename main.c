@@ -3,7 +3,7 @@
 #include<stdlib.h>
 #include<time.h>
 #include"pre.h"
-int check = 0;
+int check = 0, checksum = 0;
 int main(void)
 {
 	int board[BOARD][BOARD];
@@ -20,20 +20,20 @@ int main(void)
 		{
 			printf("ª±®a %c ½Ð¿é¤J¼Æ¦r(1-25): ", changePlayer);
 			scanf("%d", &PLYINPUT);
-			plycheck = playerenter(virtual, board, PLYINPUT);
+			plycheck = playerenter(PLYINPUT, virtual, board, &checksum);
 			while (plycheck == 1)
 			{
 				printf("輸入錯誤，或該位址已被佔據，請重新輸入數字: ");
 				scanf("%d", &PLYINPUT);
-				plycheck = playerenter(PLYINPUT, virtual, board);
+				plycheck = playerenter(PLYINPUT, virtual, board, &checksum);
 			}
-			correct(board, &check);
+			correct(board, &check, checksum);
 		}
 		else
 		{
 			printf("ª±®a %c ¿é¤J: \n", changePlayer);
 			computerenter(virtual, board);
-			correct(board, &check);
+			correct(board, &check, checksum);
 		}
 		changePlayer = (changePlayer == PLAYER) ? COMPUTER : PLAYER;
 	} while (check == 0);
@@ -41,7 +41,7 @@ int main(void)
 	return 0;
 }
 
-int playerenter(int PLYINPUT, int virtual[][BOARD], int board[][BOARD])
+int playerenter(int PLYINPUT, int virtual[][BOARD], int board[][BOARD], int* checksum)
 {
 	if (PLYINPUT < 1 || PLYINPUT>25)
 		return 1;
@@ -59,6 +59,7 @@ int playerenter(int PLYINPUT, int virtual[][BOARD], int board[][BOARD])
 					else
 					{
 						board[i][j] = PLAYER;
+						(*checksum)++;
 						return 0;
 					}
 				}
@@ -67,7 +68,7 @@ int playerenter(int PLYINPUT, int virtual[][BOARD], int board[][BOARD])
 	}
 }
 
-void computerenter(int virtual[][BOARD], int board[][BOARD])
+void computerenter(int virtual[][BOARD], int board[][BOARD], int* checksum)
 {
 	int COMINPUT, flag = 0;
 	srand((unsigned)time(NULL));
@@ -82,6 +83,7 @@ void computerenter(int virtual[][BOARD], int board[][BOARD])
 				if (virtual[i][j] == COMINPUT && board[i][j] == EMPTY)
 				{
 					board[i][j] = COMPUTER;
+					(*checksum)++;
 					flag = 1;
 				}
 			}
@@ -90,7 +92,7 @@ void computerenter(int virtual[][BOARD], int board[][BOARD])
 	printfboard(board);
 }
 
-void correct(int board[][BOARD], int* check)
+void correct(int board[][BOARD], int* check, int checksum)
 {
 	for (int i = 0;i < BOARD;i++)
 	{
@@ -154,4 +156,10 @@ void correct(int board[][BOARD], int* check)
 		printf("¹CÀ¸µ²§ô\n");
 		*check = 1;
 	}
+	else if (checksum == 25)
+	{
+		printfboard(board);
+		printf("平局!! 遊戲結束\n");
+		*check = 1;
+	}	
 }
